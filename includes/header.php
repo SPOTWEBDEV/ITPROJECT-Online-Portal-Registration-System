@@ -5,11 +5,11 @@ $base    = $base ?? '';
 $title   = $title ?? 'Student Portal';
 $current = basename($_SERVER['SCRIPT_NAME'] ?? '');
 
-function nav_link(string $href, string $label, array $files, string $current, string $base, string $extra = ''): string {
+function nav_link(string $href, string $label, array $files, string $current, string $base, string $extra = '', string $ic = ''): string {
     $active = in_array($current, $files, true);
     $cls = $active ? 'bg-ink text-white' : 'text-ink/70 hover:text-ink hover:bg-ink/5';
     return '<a href="' . $base . $href . '" class="rounded-full px-4 py-2 transition-colors ' . $cls . ' ' . $extra . '"'
-         . ($active ? ' aria-current="page"' : '') . '>' . e($label) . '</a>';
+         . ($active ? ' aria-current="page"' : '') . '>' . ($ic !== '' ? icon($ic, 'w-4 h-4') : '') . '<span>' . e($label) . '</span></a>';
 }
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ function nav_link(string $href, string $label, array $files, string $current, st
 <header class="sticky top-3 z-40 px-3 no-print">
   <div class="mx-auto max-w-6xl flex items-center justify-between rounded-full border border-line bg-white/85 backdrop-blur pl-3 pr-2 py-2 shadow-sm">
     <a href="<?= $base ?>index.php" class="flex items-center gap-2.5">
-      <span class="grid place-items-center w-10 h-10 rounded-full bg-brand text-white"><?= icon('cap', 'w-5 h-5') ?></span>
+      <img src="<?= $base ?>assets/img/logo.jpg" alt="Enugu State University of Science and Technology logo" class="h-10 w-auto">
       <span class="font-display text-lg font-semibold tracking-tight">Student Portal</span>
     </a>
     <nav class="flex items-center gap-1 text-sm font-semibold" aria-label="Main">
@@ -58,8 +58,8 @@ function nav_link(string $href, string $label, array $files, string $current, st
           <?= icon('logout', 'w-4 h-4') ?><span>Log out</span>
         </a>
       <?php elseif (!empty($_SESSION['admin_id'])): ?>
-        <?= nav_link('admin/students.php', 'Students', ['students.php'], $current, $base) ?>
-        <?= nav_link('admin/courses.php', 'Courses', ['courses.php'], $current, $base) ?>
+        <?= nav_link('admin/students.php', 'Students', ['students.php'], $current, $base, 'inline-flex items-center gap-2', 'users') ?>
+        <?= nav_link('admin/courses.php', 'Courses', ['courses.php'], $current, $base, 'inline-flex items-center gap-2', 'book') ?>
         <a href="<?= $base ?>admin/logout.php" class="flex items-center gap-2 rounded-full px-4 py-2 text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">
           <?= icon('logout', 'w-4 h-4') ?><span>Log out</span>
         </a>
