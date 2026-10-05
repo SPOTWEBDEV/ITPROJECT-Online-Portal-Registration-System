@@ -32,3 +32,8 @@ The design colours and fonts are set in the `tailwind.config` block in `includes
 - Database login: `includes/db.php` (default is XAMPP: user `root`, no password)
 - Academic session: `CURRENT_SESSION` in `includes/auth.php`
 - Department list: `$departments` at the top of `register.php`
+
+## Credits
+
+Built by Udeh Iye Preciousfaith during Industrial Training at SPOTWEB TECH, for Enugu State University of Science and Technology.
+The university logo is in `assets/img/logo.jpg`. Replace that file with a larger version if you have one (keep the same file name).

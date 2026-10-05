@@ -30,7 +30,7 @@ include __DIR__ . '/includes/header.php';
   <article class="rounded-4xl bg-white border border-line p-8 sm:p-10 print:rounded-none print:border-2 print:border-black">
     <header class="flex items-start justify-between gap-6 border-b border-line pb-6">
       <div>
-        <p class="flex items-center gap-2 font-display text-lg font-semibold"><span class="grid place-items-center w-8 h-8 rounded-full bg-brand text-white print:bg-black"><?= icon('cap', 'w-4 h-4') ?></span>Student Portal</p>
+        <div class="flex items-center gap-3"><img src="assets/img/logo.jpg" alt="Enugu State University of Science and Technology logo" class="h-12 w-auto"><p class="font-display text-base font-semibold leading-tight">Enugu State University<br>of Science and Technology</p></div>
         <h1 class="mt-4 font-display text-3xl sm:text-4xl font-semibold tracking-tight">Registration slip</h1>
         <p class="mt-1 text-ink/60">Session <?= e(CURRENT_SESSION) ?></p>
       </div>
