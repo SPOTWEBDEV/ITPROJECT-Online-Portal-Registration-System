@@ -6,6 +6,10 @@ $loggedIn = !empty($_SESSION['student_id']);
 ?>
 <section class="grid lg:grid-cols-12 gap-14 items-center pt-4 pb-16 lg:pt-10 lg:pb-24">
   <div class="lg:col-span-7">
+    <div class="mb-6 flex items-center gap-3">
+      <img src="assets/img/logo.jpg" alt="Enugu State University of Science and Technology logo" class="h-14 w-auto">
+      <p class="font-semibold leading-tight text-ink/80">Enugu State University<br>of Science and Technology</p>
+    </div>
     <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.98]">
       Register in minutes. Skip the queue.
     </h1>
